@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import PropTypes from 'prop-types'
+import {parseDate} from '../util/time'
 
 import './Message.less'
 
@@ -16,7 +17,7 @@ class Message extends Component {
         <div className="info">
           <div className="head">
             <span className="name">{author}</span>
-            <span className="date">{date}</span>
+            <span className="date">{parseDate(date)}</span>
           </div>
           <div className="content">{content}</div>
         </div>

@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import PropTypes from 'prop-types'
 
 import './Message.less'
 
@@ -8,23 +9,26 @@ class Message extends Component {
   }
 
   render() {
+    const {author, date, content} = this.props
     return (
-      <div>
-        <div className="main">
-          <img src="http://q.qlogo.cn/qqapp/100229475/45930EFEC169CA93E35A4D4ADAE480AC/100" alt="竹影清风" className="avator"/>
-          <div className="info">
-            <div className="head"><span className="name">姓名</span><span className="date">2017/04/16</span></div>
-            <div className="content">这是一段评论,好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长的评论</div>
+      <div className="main">
+        <img src="http://q.qlogo.cn/qqapp/100229475/45930EFEC169CA93E35A4D4ADAE480AC/100" alt="竹影清风" className="avator"/>
+        <div className="info">
+          <div className="head">
+            <span className="name">{author}</span>
+            <span className="date">{date}</span>
           </div>
-
-        </div>
-        <div className="main">
-          <img src="http://q.qlogo.cn/qqapp/100229475/45930EFEC169CA93E35A4D4ADAE480AC/100" alt="竹影清风" className="avator"/>
-          <div className="content">这是一段评论,好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长好长的评论</div>
+          <div className="content">{content}</div>
         </div>
       </div>
     )
   }
+}
+
+Message.PropTypes = {
+  author: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired
 }
 
 export default Message

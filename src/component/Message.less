@@ -7,22 +7,22 @@
   }
 
   .info {
+    width: calc(~"100% - 50px");
     display: inline-block;
-    width: 80%;
-  }
-
-  .head {
-    width: 60%;
-    .name .date{
-      margin: 10px 0;
+    vertical-align: top;
+    .head {
+      margin-left: 10px;
+      color: #999;
+      .name, .date {
+        padding-right: 10px;
+      }
     }
-  }
 
-  .content {
-    width: 90%;
-    margin-left: 10px;
-    display: inline-block;
-    font-size: 14px;
-    font-family: sans-serif;
+    .content {
+      margin-left: 10px;
+      display: inline-block;
+      font-size: 14px;
+      font-family: sans-serif;
+    }
   }
 }

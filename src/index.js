@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import Message from "./component/Message"
+import Board from "./component/Board"
+import {posts} from './constant/duoshuo.json'
 
-
-ReactDOM.render(<Message/>, document.getElementById("message"))
+ReactDOM.render(<Board posts={posts} />, document.getElementById("message"))

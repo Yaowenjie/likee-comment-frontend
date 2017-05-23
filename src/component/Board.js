@@ -9,8 +9,8 @@ class Board extends Component {
 
   assembleMessages (posts) {
     let result = []
-    posts.forEach(post => {
-      result.push(<Message author={post.author_name} date={post.created_at} content={post.message}/>)
+    posts.forEach((post, index) => {
+      result.push(<Message key={index} author={post.author_name} date={post.created_at} content={post.message} reply="dfjdk"/>)
     })
     return result
   }

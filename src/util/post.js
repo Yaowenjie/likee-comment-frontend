@@ -3,7 +3,7 @@ import {parseDate} from './time'
 const getReplys = (id, posts) => {
   let replys = []
   posts.forEach(post => {
-    if (post.parents && id === post.parents[0]) {
+    if (post.parents && id == post.parents[0]) {
       replys.push({
         "author": post.author_name,
         "created_at": parseDate(post.created_at),
@@ -20,7 +20,7 @@ export const assemblePosts = (posts) => {
   posts.forEach(post => {
     if (!post.parents) {
       result.push({
-        "id": post.post_id,
+        "id": Number(post.post_id),
         "thread": post.thread_id,
         "message": post.message,
         "created_at": parseDate(post.created_at),

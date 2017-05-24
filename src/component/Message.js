@@ -13,8 +13,8 @@ class Message extends Component {
   assembleReply(replys) {
     if (replys && replys.length > 0) {
       let result = []
-      replys.forEach(reply => {
-        result.push(<Reply key={reply} reply={reply} />)
+      replys.forEach((reply, index) => {
+        result.push(<Reply key={index} reply={reply} />)
       })
       return result
     }

@@ -45,7 +45,7 @@ describe('post', () => {
 
     const postsWithReply = [
       {
-        "post_id": 6266754078215242497,
+        "post_id": "6266754078215242497",
         "thread_id": 6266750962442961666,
         "message": "\u5206\u4e0d\u6e05\u54ea\u5f20\u662f\u54ea\u4e2a\u57ce\u5e02\u7684\u54ea\u513f",
         "site_id": "1290665",
@@ -83,7 +83,7 @@ describe('post', () => {
         "post_key": "6266754641434772225"
       },
       {
-        "post_id": 6270792570322813697,
+        "post_id": "6270792570322813697",
         "thread_id": 6266968087522706177,
         "message": "\u8fd9\u4e2a\u98ce\u683c\u6211\u559c\u6b22\uff0c\u7ed9103\u5206",
         "site_id": "1290665",

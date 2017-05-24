@@ -1,4 +1,4 @@
-import React, {Component} from "react"
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import Reply from './Reply'
 import Avator from './Avator'
@@ -26,7 +26,7 @@ class Message extends Component {
     return (
       <div className={styles.main}>
         <Avator letter={author.charAt(0)} size={45} color={getColorByStr(author)} />
-        {/*<img src="http://q.qlogo.cn/qqapp/100229475/45930EFEC169CA93E35A4D4ADAE480AC/100" alt="竹影清风" className={styles.avator} />*/}
+        {/*<img src='http://q.qlogo.cn/qqapp/100229475/45930EFEC169CA93E35A4D4ADAE480AC/100' alt='竹影清风' className={styles.avator} />*/}
         <div className={styles.info}>
           <div className={styles.head}>
             <span className={styles.name}>{author}</span>

@@ -1,6 +1,6 @@
-import React, {Component} from "react"
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import Message from "./Message"
+import Message from './Message'
 
 class Board extends Component {
   constructor(props) {

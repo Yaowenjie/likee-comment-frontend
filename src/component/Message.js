@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import PropTypes from 'prop-types'
 import Reply from './Reply'
 import Avator from './Avator'
+import {getColorByStr} from '../util/color'
 
 import styles from './Message.less'
 
@@ -24,7 +25,7 @@ class Message extends Component {
     const {author, date, content, reply} = this.props
     return (
       <div className={styles.main}>
-        <Avator letter={author.charAt(0)} size={50} />
+        <Avator letter={author.charAt(0)} size={45} color={getColorByStr(author)} />
         {/*<img src="http://q.qlogo.cn/qqapp/100229475/45930EFEC169CA93E35A4D4ADAE480AC/100" alt="竹影清风" className={styles.avator} />*/}
         <div className={styles.info}>
           <div className={styles.head}>

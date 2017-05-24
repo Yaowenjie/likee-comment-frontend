@@ -1,6 +1,5 @@
 import React, {Component} from "react"
 import PropTypes from 'prop-types'
-import {parseDate} from '../util/time'
 import Reply from './Reply'
 import Avator from './Avator'
 
@@ -11,12 +10,13 @@ class Message extends Component {
     super(props)
   }
 
-
-  assembleReply(reply) {
-    if (reply) {
-      return (
-        <Reply reply />
-      )
+  assembleReply(replys) {
+    if (replys && replys.length > 0) {
+      let result = []
+      replys.forEach(reply => {
+        result.push(<Reply key={reply} reply={reply} />)
+      })
+      return result
     }
   }
 
@@ -29,12 +29,11 @@ class Message extends Component {
         <div className={styles.info}>
           <div className={styles.head}>
             <span className={styles.name}>{author}</span>
-            <span className={styles.date}>{parseDate(date)}</span>
+            <span className={styles.date}>{date}</span>
           </div>
           <div className={styles.content}>
             {content}
           </div>
-          {this.assembleReply(reply)}
           {this.assembleReply(reply)}
         </div>
       </div>

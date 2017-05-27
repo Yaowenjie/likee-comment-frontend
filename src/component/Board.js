@@ -1,16 +1,16 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import Message from './Message'
+import Thread from './Thread'
 
 class Board extends Component {
   constructor(props) {
     super(props)
   }
 
-  assembleMessages (posts) {
+  assembleThreads (threads) {
     let result = []
-    posts.forEach((post, index) => {
-      result.push(<Message key={index} author={post.author.name} date={post.created_at} content={post.message} reply={post.reply} />)
+    threads.forEach((thread, index) => {
+      result.push(<Thread key={index} data={thread} />)
     })
     return result
   }
@@ -18,14 +18,14 @@ class Board extends Component {
   render() {
     return (
       <div>
-        {this.assembleMessages(this.props.posts)}
+        {this.assembleThreads(this.props.threads)}
       </div>
     )
   }
 }
 
 Board.PropTypes = {
-  posts: PropTypes.shape({}).isRequired
+  threads: PropTypes.shape({}).isRequired
 }
 
 export default Board

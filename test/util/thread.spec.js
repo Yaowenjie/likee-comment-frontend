@@ -1,4 +1,4 @@
-import {assembleThreads} from '../../src/util/thread'
+import {assembleThreads, findThreadByKey} from '../../src/util/thread'
 import chai from 'chai'
 
 const expect = chai.expect
@@ -118,6 +118,43 @@ describe('thread', () => {
 
       expect(assembleThreads(originThreads, originPosts)).to.eql(expectedThreads)
     })
+  })
 
+  describe('#findThreadByKey()', () => {
+    const thread1 = {
+      'id': 6266750315886805762,
+      'created_at': '2016-03-27T23:11:49+08:00',
+      'likes': 0,
+      'title': '\u8bf7\u66ff\u6362\u6210\u6587\u7ae0\u7684\u6807\u9898',
+      'url': 'http:\/\/\u8bf7\u66ff\u6362\u6210\u6587\u7ae0\u7684\u7f51\u5740',
+      'key': '\u8bf7\u5c06\u6b64\u5904\u66ff\u6362\u6210\u6587\u7ae0\u5728\u4f60\u7684\u7ad9\u70b9\u4e2d\u7684ID',
+      'post': []
+    }
+    const thread2 = {
+      'id': 6266750962442961666,
+      'created_at': '2016-03-27T23:14:20+08:00',
+      'likes': 1,
+      'title': '\u8fc7\u53bb\u7684\u4e00\u4e9b\u7167\u7247',
+      'url': 'http:\/\/\/life%7C%E7%94%9F%E6%B4%BB\/%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87',
+      'key': '\u8fc7\u53bb\u7684\u4e00\u4e9b\u7167\u7247',
+      'post': []
+    }
+
+    const targetThreads = [thread1, thread2]
+
+    it('should find thread1 in threads by key of thread1', () => {
+      const thread1Key = '\u8bf7\u5c06\u6b64\u5904\u66ff\u6362\u6210\u6587\u7ae0\u5728\u4f60\u7684\u7ad9\u70b9\u4e2d\u7684ID'
+      expect(findThreadByKey(targetThreads, thread1Key)).to.eql(thread1)
+    })
+
+    it('should find thread2 in threads by key of thread2', () => {
+      const thread2Key = '\u8fc7\u53bb\u7684\u4e00\u4e9b\u7167\u7247'
+      expect(findThreadByKey(targetThreads, thread2Key)).to.eql(thread2)
+    })
+
+    it('should find undefined in threads by key of nonexisted thread', () => {
+      const nonExistedKey = '不存在的key'
+      expect(findThreadByKey(targetThreads, nonExistedKey)).to.be.an('undefined')
+    })
   })
 })

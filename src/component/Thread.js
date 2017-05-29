@@ -21,7 +21,8 @@ class Thread extends Component {
     const { data } = this.props
     return (
       <div className={styles.main}>
-        <span className={styles.title}>{data.title}</span>
+        {/*<span className={styles.title}>{data.title}</span>*/}
+        <span className={styles.amount}>{ (data.post.length !== 0) && (data.post.length + '条评论') }</span>
         { (data.likes !== 0) && (<span>{data.likes}</span>) }
         {this.assemblePosts(data.post)}
       </div>

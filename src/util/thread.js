@@ -26,3 +26,7 @@ export const assembleThreads = (threads , posts) => {
   })
   return result
 }
+
+export const findThreadByKey = (threads, key) => {
+  return threads.find(thread => thread.key === key)
+}

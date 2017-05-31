@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require babel-polyfill test/**/*.spec.js",
-    "dev": "webpack-dev-server --content-base src/",
+    "dev": "webpack-dev-server --env=dev --content-base src/",
+    "start": "webpack-dev-server --env=prod --content-base src/",
     "lint": "./node_modules/.bin/eslint test src"
   },
   "author": "",

@@ -7,7 +7,8 @@
     "test": "mocha --compilers js:babel-core/register --require babel-polyfill test/**/*.spec.js",
     "dev": "webpack-dev-server --env=dev --content-base src/",
     "start": "webpack-dev-server --env=prod --content-base src/",
-    "lint": "./node_modules/.bin/eslint test src"
+    "lint": "./node_modules/.bin/eslint test src",
+    "analyse": "webpack --env=prod --json | webpack-bundle-size-analyzer"
   },
   "author": "",
   "license": "ISC",
@@ -30,7 +31,6 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
-    "chinese-to-pinyin": "^0.1.6",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"

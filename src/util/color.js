@@ -1,7 +1,7 @@
-import pinyin from 'chinese-to-pinyin'
+import {getFirstPY} from './pinyin'
 import colorMap from '../constant/colorMap.json'
 
 export const getColorByStr = (str) => {
-  const firstLetter = pinyin(str, {noTone: true})
+  const firstLetter = getFirstPY(str)[0]
   return firstLetter ? colorMap[firstLetter.charAt(0).toUpperCase()] : colorMap[str.charAt(0).toUpperCase()]
 }

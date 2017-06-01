@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require babel-polyfill test/**/*.spec.js",
     "dev": "webpack-dev-server --env=dev --content-base src/",
-    "start": "webpack-dev-server --env=prod --content-base src/",
+    "start": "webpack-dev-server --env=prod --content-base src/ --inline --port 8088",
     "lint": "./node_modules/.bin/eslint test src",
     "analyse": "webpack --env=prod --json | webpack-bundle-size-analyzer"
   },

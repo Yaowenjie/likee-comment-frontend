@@ -154,7 +154,10 @@ describe('thread', () => {
 
     it('should find undefined in threads by key of nonexisted thread', () => {
       const nonExistedKey = '不存在的key'
-      expect(findThreadByKey(targetThreads, nonExistedKey)).to.be.an('undefined')
+      expect(findThreadByKey(targetThreads, nonExistedKey)).to.eql({
+        'likes': 0,
+        'title': nonExistedKey,
+      })
     })
   })
 })

@@ -28,5 +28,10 @@ export const assembleThreads = (threads , posts) => {
 }
 
 export const findThreadByKey = (threads, key) => {
-  return threads.find(thread => thread.key === key)
+  const currentThread = threads.find(thread => thread.key === key)
+  return typeof(currentThread) !== 'undefined' && currentThread !== null ? currentThread :
+  {
+    'likes': 0,
+    'title': key,
+  }
 }

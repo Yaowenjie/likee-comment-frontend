@@ -22,10 +22,10 @@ class Thread extends Component {
     return (
       <div className={styles.main}>
         {/*<span className={styles.title}>{data.title}</span>*/}
-        { (data.post.length !== 0) && (<span className={styles.amount}><span className={styles.number}>{data.post.length}</span>条评论</span>) }
+        { (data.post && data.post.length !== 0) && (<span className={styles.amount}><span className={styles.number}>{data.post.length}</span>条评论</span>) }
         <span className={styles.prompt}>该评论数据迁移自<b>多说</b>，更多评论功能敬请期待</span>
         {/*{ (data.likes !== 0) && (<span>{data.likes}</span>) }*/}
-        {this.assemblePosts(data.post)}
+        {data.post && this.assemblePosts(data.post)}
         <form className={styles.commentForm} action="">
           <div>
             <input type="text" name="name" placeholder="大名、昵称或者代号" className={styles.name}/> <br/>

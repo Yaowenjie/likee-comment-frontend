@@ -27,13 +27,14 @@ class Thread extends Component {
         {/*{ (data.likes !== 0) && (<span>{data.likes}</span>) }*/}
         {data.post && this.assemblePosts(data.post)}
         <form className={styles.commentForm} action="">
-          <div>
-            <input type="text" name="name" placeholder="大名、昵称或者代号" className={styles.name}/> <br/>
-          </div>
-          <div>
-            <textarea rows="3" cols="30" placeholder="站主比较懒，提交功能还没有做，想留言请移步github或者gmail，敬请期待后续功能改善。" className={styles.message}></textarea>
-          </div>
-          <button type='submit'>提交</button>
+          <span className={styles.commentNote}>站主比较懒，放弃了完成提交功能，想留言请使用gitment或者diqus，也可以移步github或者gmail。</span>
+          {/*<div>*/}
+            {/*<input type="text" name="name" placeholder="大名、昵称或者代号" className={styles.name}/> <br/>*/}
+          {/*</div>*/}
+          {/*<div>*/}
+            {/*<textarea rows="3" cols="30" placeholder="站主比较懒，提交功能还没有做，想留言请移步github或者gmail，敬请期待后续功能改善。" className={styles.message}></textarea>*/}
+          {/*</div>*/}
+          {/*<button type='submit'>提交</button>*/}
         </form>
       </div>
     )
